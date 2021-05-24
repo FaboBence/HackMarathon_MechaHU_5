@@ -62,6 +62,7 @@ for i,firstword in enumerate(words):
 	kiir.append([firstword])
 	kiir[i] = recursive(dictionary, kiir[i])
 
+	# Kiiratás
 	print(len(kiir[i]), attacher(kiir[i]))
 	
 """
@@ -88,7 +89,3 @@ for i,firstword in enumerate(words):
 		if found:
 			iteracio = 0
 """
-
-# Kiiratás
-for i,word in enumerate(kiir):
-	print(len(word), attacher(kiir[i]))
