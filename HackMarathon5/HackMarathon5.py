@@ -30,8 +30,13 @@ def recursive(dictionary,list_of_words,longest = []):
 		ret = recursive(dictionary, cpy, longest)
 		if len(longest) < len(ret):
 			longest = deepcopy(ret)
-	if skipped == len(dictionary[list_of_words[-1]]) and len(list_of_words) > len(longest):
-		longest = deepcopy(list_of_words)
+
+	if skipped == len(dictionary[list_of_words[-1]]):
+		if len(list_of_words) > len(longest):
+			longest = deepcopy(list_of_words)
+		elif len(list_of_words) == len(longest) and len(attacher(list_of_words)) < len(attacher(longest)):
+			longest = deepcopy(list_of_words)
+		
 	return deepcopy(longest)
 
 words = ["rush", "writer", "grate", "ignorant", "cloudy", "chicken", "illness", "useless", "challenge", "comfortable",
@@ -58,6 +63,7 @@ for kiiras in dictionary:
 
 # Searching for the longest concatenation
 print()
+words = ["blood","zonked"]
 for i,firstword in enumerate(words):
 	kiir.append([firstword])
 	kiir[i] = recursive(dictionary, kiir[i])
