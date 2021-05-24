@@ -30,7 +30,7 @@ def recursive(dictionary,list_of_words,longest = []):
 		ret = recursive(dictionary, cpy, longest)
 		if len(longest) < len(ret):
 			longest = deepcopy(ret)
-	if skipped == len(dictionary[list_of_words[-1]]):
+	if skipped == len(dictionary[list_of_words[-1]]) and len(list_of_words) > len(longest):
 		longest = deepcopy(list_of_words)
 	return deepcopy(longest)
 
@@ -64,28 +64,3 @@ for i,firstword in enumerate(words):
 
 	# Kiiratás
 	print(len(kiir[i]), attacher(kiir[i]))
-	
-"""
-for i,firstword in enumerate(words):
-	tmp_words = deepcopy(words) # List of words that have not been used
-	attached.append(firstword)
-	kiir.append([firstword])
-	tmp_words.remove(firstword)
-	
-	iteracio = 0
-	while len(tmp_words)>0 and iteracio+1 < len(tmp_words): # Addig fut, amíg megtaláljuk a leghosszabb "összetett" szót
-		for word in tmp_words:
-			found = False
-			for j in range(1,1+min(len(attached[i]),len(word))): # j: hány betűt nézünk meg
-				if attached[i][-j:] == word[:j]:
-					attached[i] += word[j:]
-					kiir[i].append(word)
-					tmp_words.remove(word)
-					found = True
-					break
-			if found:
-				break
-		iteracio += 1
-		if found:
-			iteracio = 0
-"""
