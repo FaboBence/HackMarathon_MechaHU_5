@@ -20,24 +20,28 @@ face_attributes = ['age', 'gender', 'smile', 'emotion']
 def max_emotion(emotions):
     max = emotions.anger
     found = 'anger'
-    if emotions.contempt > emotions.anger:
+    if emotions.contempt > max:
         max = emotions.contempt
         found = 'contempt'
-    if emotions.contempt > emotions.anger:
-        max = emotions.contempt
-        found = 'contempt'
-    if emotions.contempt > emotions.anger:
-        max = emotions.contempt
-        found = 'contempt'
-    if emotions.contempt > emotions.anger:
-        max = emotions.contempt
-        found = 'contempt'
-    if emotions.contempt > emotions.anger:
-        max = emotions.contempt
-        found = 'contempt'
-    if emotions.contempt > emotions.anger:
-        max = emotions.contempt
-        found = 'contempt'
+    if emotions.disgust > max:
+        max = emotions.disgust
+        found = 'digust'
+    if emotions.fear > max:
+        max = emotions.fear
+        found = 'fear'
+    if emotions.happiness > max:
+        max = emotions.happiness
+        found = 'happiness'
+    if emotions.neutral > max:
+        max = emotions.neutral
+        found = 'neutral'
+    if emotions.sadness > max:
+        max = emotions.sadness
+        found = 'sadness'
+    if emotions.surprise > max:
+        max = emotions.surprise
+        found = 'surprise'
+    return found
 
 
 # Image
@@ -83,4 +87,5 @@ for face in detected_faces:
         print('\tSadness: ', face.face_attributes.emotion.sadness)
         print('\tSurprise: ', face.face_attributes.emotion.surprise)
         print()
+        print(max_emotion(face.face_attributes.emotion))
 image.close()
