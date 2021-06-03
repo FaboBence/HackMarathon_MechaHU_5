@@ -66,6 +66,7 @@ def Emotion_recognition():
     detected_faces = face_client.face.detect_with_stream(image, return_face_attributes = face_attributes)   # With downloaded image
 
     for face in detected_faces:
+        '''
         print()
         # ID of detected face
         print(face.face_id)
@@ -85,6 +86,7 @@ def Emotion_recognition():
         print('\tSadness: ', face.face_attributes.emotion.sadness)
         print('\tSurprise: ', face.face_attributes.emotion.surprise)
         print()
+        '''
 
         found = max_emotion(face.face_attributes.emotion)
         print('Recognised emotion:', found)

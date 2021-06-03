@@ -10,5 +10,7 @@ def Spotify_Search(emotion):
     # Search
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=KEY_SPOTIFY)
     spotify = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
-    results = spotify.search(q = emotion, type = 'track', limit = 10)
-    print('Song:',results['tracks']['items'][0]['name'],'\nLink:', results['tracks']['items'][0]['external_urls']['spotify'])
+    results = spotify.search(q = emotion, type = 'track', limit = 20)
+
+    return results['tracks']['items']
+    #print('Song:',results['tracks']['items'][0]['name'],'\nLink:', results['tracks']['items'][0]['external_urls']['spotify'])
