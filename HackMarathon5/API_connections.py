@@ -6,12 +6,18 @@ from azure.cognitiveservices.vision.face import FaceClient
 from azure.cognitiveservices.vision.face.models import FaceAttributeType
 from msrest.authentication import CognitiveServicesCredentials
 
-# Key for the API
-with open("API.txt", "r") as f:
-	KEY = f.read()
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
-# Microsoft Face API endpoint
-ENDPOINT = 'https://bence.cognitiveservices.azure.com/'
+# Spotify API
+cid = 'f897163015af463cad929365808bf881'    # Endpoint
+with open("Spotify_API.txt","r") as f:
+    KEY_SPOTIFY = f.read()                  # Key
+
+# Microsoft Face API
+ENDPOINT = 'https://bence.cognitiveservices.azure.com/' # Endpoint
+with open("API.txt", "r") as f:
+	KEY = f.read()                                      # Key for the API
 
 # Create an authenticated FaceClient.
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
@@ -25,7 +31,7 @@ def max_emotion(emotions):
         found = 'contempt'
     if emotions.disgust > max:
         max = emotions.disgust
-        found = 'digust'
+        found = 'disgust'
     if emotions.fear > max:
         max = emotions.fear
         found = 'fear'
@@ -87,5 +93,13 @@ for face in detected_faces:
         print('\tSadness: ', face.face_attributes.emotion.sadness)
         print('\tSurprise: ', face.face_attributes.emotion.surprise)
         print()
-        print(max_emotion(face.face_attributes.emotion))
+        found = max_emotion(face.face_attributes.emotion)
+        print(found)
 image.close()
+
+
+#################### Spotify search ####################
+client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=KEY_SPOTIFY)
+spotify = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+results = spotify.search(q = found, type = 'track', limit = 10)
+print('Song:',results['tracks']['items'][0]['name'],'\nLink:', results['tracks']['items'][0]['external_urls']['spotify'])
