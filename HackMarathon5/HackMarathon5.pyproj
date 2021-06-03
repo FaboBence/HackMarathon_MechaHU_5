@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fd43c726-4524-45a2-859f-0da13b420255</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>API_connections.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,10 +21,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="API_connections.py">
+    <Compile Include="Main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HackMarathon5.py" />
+    <Compile Include="Spotify_API.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HackMarathon5_Closed_Part.py" />
+    <Compile Include="Microsoft_Face_API.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
