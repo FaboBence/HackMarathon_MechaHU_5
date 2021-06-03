@@ -24,6 +24,7 @@
     <Compile Include="Main.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Quote_API.py" />
     <Compile Include="Spotify_API.py">
       <SubType>Code</SubType>
     </Compile>
