@@ -1,4 +1,4 @@
-# HackMarathon_MechaHU_5
+# HackMarathon_MechaHU_5 - Emotion based Music recommendation
 ### Team
 MechaHU
 ### Team members
