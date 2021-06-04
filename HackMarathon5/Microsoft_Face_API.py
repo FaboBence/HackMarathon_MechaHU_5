@@ -1,5 +1,6 @@
 import requests
 import cv2
+import os
 from PIL import Image
 
 from azure.cognitiveservices.vision.face import FaceClient
@@ -7,23 +8,23 @@ from azure.cognitiveservices.vision.face.models import FaceAttributeType
 from msrest.authentication import CognitiveServicesCredentials
 
 def max_emotion(emotions):
-    max = emotions.anger
-    found = 'anger'
-    if emotions.contempt > max:
-        max = emotions.contempt
-        found = 'contempt'
-    if emotions.disgust > max:
-        max = emotions.disgust
-        found = 'disgust'
+    max = emotions.neutral
+    found = 'neutral'
+    #if emotions.contempt > max:
+    #    max = emotions.contempt
+    #    found = 'contempt'
+    #if emotions.disgust > max:
+    #    max = emotions.disgust
+    #    found = 'disgust'
     if emotions.fear > max:
         max = emotions.fear
         found = 'fear'
     if emotions.happiness > max:
         max = emotions.happiness
         found = 'happiness'
-    if emotions.neutral > max:
-        max = emotions.neutral
-        found = 'neutral'
+    if emotions.anger > max:
+        max = emotions.anger
+        found = 'anger'
     if emotions.sadness > max:
         max = emotions.sadness
         found = 'sadness'
@@ -33,8 +34,8 @@ def max_emotion(emotions):
     return found
 
 def takephoto():
-    cam = cv2.VideoCapture(0)
-    while(cam.isOpened()):
+    cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    while True: #cam.isOpened()):
         ret,frame = cam.read()
         if ret == True:
             cv2.imshow("Press 'q' to take a picture!", frame)
@@ -45,6 +46,7 @@ def takephoto():
                 break
         else:
             break
+    
     cam.release()
     cv2.destroyAllWindows()
 
@@ -91,4 +93,5 @@ def Emotion_recognition():
         found = max_emotion(face.face_attributes.emotion)
         print('Recognised emotion:', found)
     image.close()
+    os.remove('photo.jpg')
     return found

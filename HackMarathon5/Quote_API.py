@@ -11,4 +11,4 @@ def random_quote(emotion):
     if len(short_quotes)==0:
         print("No quote found, sry")
     else:
-        print("\n",short_quotes[random.randint(0,len(short_quotes)-1)]['quote'], "  (by ",short_quotes[random.randint(0,len(short_quotes)-1)]["author"],")\n")
+        print("\nRandom quote:\n",short_quotes[random.randint(0,len(short_quotes)-1)]['quote'], "  (by ",short_quotes[random.randint(0,len(short_quotes)-1)]["author"],")\n")
