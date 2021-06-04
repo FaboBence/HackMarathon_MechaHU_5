@@ -8,16 +8,26 @@ MechaHU
 - Gellért Csapodi, Budapest University of Technology and Economics
 
 # Our project
-The aim of our project was to combine some APIs in a cretive and fun way. After some research, we've choosen three APIs to work with: the Microsoft Azure Face Detection API, the Spotify API and the Quote API. 
+The aim of our project was to combine some APIs in a creative and fun way. After some research, we've choosen three APIs to work with: the Microsoft Azure Face Detection API, the Spotify API and the Quote API.
 
-Our small fun program recognizes the current emotions and mood of the user via a picture taken with a webcam, and according to that, it gives the user a fitting quote from a famous person and recommends some music which matcehs the mood of the user. This way, you can focus on your feelings and think about them with fitting background music and a nice matching quote, or you can simply have fun.
+Our program recognizes the current mood of the user via a picture taken with a webcam, and based on that it gives the user a fitting quote from a famous person and recommends some music.
 
 # Detailed description
 When the program is launched, the webcam of the user's computer is switched on and a photo is taken of the user.
-Next, the Microsoft Azure Face Detection API guesses the current mood and the emotions of the user, and returns the most fitting one, like happiness, sadness, fear, surprise, anger, etc. 
-This emotion is passed to the Quote API which comes up with a quote from a famous person about the feeling of the user. This is displayed in the console.
-In the next stage, the Spotify API recommends the user some music which fits his/her current mood the best: some elated, nice music for happiness, dark and sourful  songs for sadness, or a powerful heavy metal hit for anger, etc. The user can choose a song from the recommendation list, which is then started via Spotify.
+We feed the photo to the Microsoft Azure Face Detection API, which recognises the current emotion of the user. We only take happiness, sadness, fear, anger and neutral emotion into account.
+
+Anger:
+
+![image](https://user-images.githubusercontent.com/65888378/120842732-61550100-c56d-11eb-8c0a-7e1eb79d61f5.png)
+
+Neutral:
+
+![image](https://user-images.githubusercontent.com/65888378/120842813-83e71a00-c56d-11eb-8fe5-211ed286b4fa.png)
+
+
+This emotion is passed on to the Quote API which finds a quote about it from a famous person. This is displayed in the console.
+
+In the next stage, with the help of the Spotify API we find some music which fits the users current mood the best: some fast-paced music for happiness, comforting songs for sadness, or a powerful heavy metal hit for anger, etc. Currently we use hard coded Spotify playlists from which our program can choose three songs randomly. the  The user can choose a song from the recommendation list, which is then automatically opened in the browser on Spotify.
 
 # Further ideas
-The program could be boosted by applying further APIs which deal with the emotions of the user, like recommending activites, food or a beer matching his/her mood.
-Furthermore, other things could also be guessed from the picture taken of the user: for isntance, if his/her hair seems to be too long, the program could recommend a hairdresser, or required sleeping hours could be advised if the user seems to be tired. 
+The program could be boosted by applying further APIs which recommend other activites, such as food or a beer matching the current mood of the user.
