@@ -14,16 +14,19 @@ Our program recognizes the current mood of the user via a picture taken with a w
 
 # Detailed description
 When the program is launched, the webcam of the user's computer is switched on and a photo is taken of the user.
-We feed the photo to the Microsoft Azure Face Detection API, which recognises the current emotion of the user. We only take happiness, sadness, fear, anger and neutral emotion into account.
+We feed the photo to the Microsoft Azure Face Detection API, which recognises the current emotion of the user. We only take happiness, sadness, fear, surprise, anger and neutral emotion into account.
 
 Anger:
 
-![image](https://user-images.githubusercontent.com/65888378/120842732-61550100-c56d-11eb-8c0a-7e1eb79d61f5.png)
+<p align='center'>
+<img height="300" src="https://user-images.githubusercontent.com/65888378/120842732-61550100-c56d-11eb-8c0a-7e1eb79d61f5.png" />
+</p>
 
 Neutral:
 
-![image](https://user-images.githubusercontent.com/65888378/120842813-83e71a00-c56d-11eb-8fe5-211ed286b4fa.png)
-
+<p align='center'>
+<img height=300 src="https://user-images.githubusercontent.com/65888378/120842813-83e71a00-c56d-11eb-8fe5-211ed286b4fa.png" />
+</p>
 
 This emotion is passed on to the Quote API which finds a quote about it from a famous person. This is displayed in the console.
 
