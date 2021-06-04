@@ -19,27 +19,24 @@ https://youtu.be/ZioqrRkyJDY
 When the program is launched, the webcam of the user's computer is switched on and a photo is taken of the user.
 We feed the photo to the Microsoft Azure Face Detection API, which recognises the current emotion of the user. We only take happiness, sadness, fear, anger and neutral emotion into account.
 
-Happiness: (Bence Fabó)
-
-<p align='center'>
+<div align='center'>
 <img height="300" src="https://user-images.githubusercontent.com/65888378/120859746-f0214800-c584-11eb-8437-525178ced50e.png" />
-</p>
+  <p><i>Happiness: (Bence Fabó)</i></p>
+</div>
 
-Anger: (Mihály Makovsky)
-
-<p align='center'>
+<div align='center'>
 <img height="300" src="https://user-images.githubusercontent.com/65888378/120842732-61550100-c56d-11eb-8c0a-7e1eb79d61f5.png" />
-</p>
+  <p><i>Anger: (Mihály Makovsky)</i></p>
+</div>
 
-Neutral: (Gellért Csapodi)
-
-<p align='center'>
+<div align='center'>
 <img height=300 src="https://user-images.githubusercontent.com/65888378/120842813-83e71a00-c56d-11eb-8fe5-211ed286b4fa.png" />
-</p>
+  <p><i>Neutral: (Gellért Csapodi)</i></p>
+</div>
 
 This emotion is passed on to the Quote API which finds a quote about it from a famous person. This is displayed in the console.
 
-In the next stage, with the help of the Spotify API we find some music which fits the users current mood the best: some fast-paced music for happiness, comforting songs for sadness, or a powerful heavy metal hit for anger, etc. Currently we use hard coded Spotify playlists from which our program can choose three songs randomly. the  The user can choose a song from the recommendation list, which is then automatically opened in the browser on Spotify.
+In the next stage, with the help of the Spotify API we find some music which fits the users current mood the best: some fast-paced music for happiness, comforting songs for sadness, or a powerful heavy metal hit for anger, etc. Currently we use hard coded Spotify playlists from which our program can choose three songs randomly. The user can choose a song from the recommendation list, which is then automatically opened in the browser on Spotify.
 
 ![image](https://user-images.githubusercontent.com/65888378/120860155-83f31400-c585-11eb-85b4-fc41a2a06fe0.png)
 
