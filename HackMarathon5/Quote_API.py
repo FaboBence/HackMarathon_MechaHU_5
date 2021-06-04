@@ -3,7 +3,7 @@ import random
 
 def random_quote(emotion):
     search=emotion
-    result=quote(search, limit=50)
+    result=quote(search, limit=30)
     short_quotes=[]
     for item in result:
         if len(item["quote"])<150:

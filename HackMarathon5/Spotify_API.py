@@ -8,12 +8,12 @@ def Spotify_Search(emotion):
         KEY_SPOTIFY = f.read()                  # Key
 
     # Emotion -> Playlist dictionary
-    playlist_dict = {'happiness': ['spotify','37i9dQZF1DX3rxVfibe1L0'],
-                     'sadness': ['spotify','37i9dQZF1DX7qK8ma5wgG1'],
-                     'anger': ['spotify','37i9dQZF1DX9qNs32fujYe'],
-                     'neutral': ['LoudCult','50Lt6hOGx8rENluTGRwskm'],
+    playlist_dict = {'happiness': ['Bence','4BiXda1TWLMG301vICPvAG'],
+                     'sadness': ['Bence','0FF7u1u9wdeHFOd4Lns2oL'],
+                     'anger': ['Bence','3gbGsBHj1o3Gx7Pr8JuLsa'],
+                     'neutral': ['Bence','5UtB4Fk6XQyUvlboAZkgfu'],
                      'surprise': ['firegaze','6SxqdKdDe7DYf2uPeSQ0Ft'],
-                     'fear': ['Meditation Station','7LI3zw8HLkjKo5YpvA26KG']}
+                     'fear': ['Bence','4hGSBWGpk6ASYTqa0GCfLy']}
     
     # Search
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=KEY_SPOTIFY)

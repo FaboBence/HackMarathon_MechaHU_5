@@ -29,8 +29,8 @@ def max_emotion(emotions):
         max = emotions.sadness
         found = 'sadness'
     if emotions.surprise > max:
-        max = emotions.surprise
-        found = 'surprise'
+        max = emotions.fear
+        found = 'fear'
     return found
 
 def takephoto():
